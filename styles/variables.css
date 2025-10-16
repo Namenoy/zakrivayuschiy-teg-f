@@ -1,1 +1,35 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root{
+    --main_font:"Inter";
+    --back_font:"PressStart2P";
+    --mobile-width-card:clamp(375px, 256.56px + 30.52vw, 696px);
+
+    --white-color:rgba(255,255,255);
+    --accent-color:rgba(0,0,0);
+    --red-color:rgba(255,0,0);
+
+    --main-font-size:18px;
+    --font-weight-title:715;
+    --line-height-title:120%;
+    --font-family-header:"PressStart2P";
+
+    --font-weight-about:410;
+    --line-height-about:21px;
+    --header-text-weight:400;
+
+    --font-size-btn:14px;
+    --line-height-btn:90%;
+    --font-weight-btn:400;
+    --font-family-btn: "PressStart2P";
+
+    --fill-color:rgba(0,0,0);
+    --contour-color:rgb(255, 0, 0);
+
+
+    --color_outline: rgba(0, 0, 0, 1);
+    --colot-text:rgba(0, 0, 0, 1);
+
+    --gradient-to-right:repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 0px 4px);
+    --gradient-to-bottom:repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 0px 4px);
+    --linear-gradient:linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
+}

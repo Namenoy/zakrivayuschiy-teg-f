@@ -11,6 +11,389 @@
 */
 
 .page {
+  display: flex;
+  flex-direction: column;
+  position: static;
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background-size: cover;
+  background-image: var(--gradient-to-right, repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 0px 4px)),
+    var(--gradient-to-bottom, repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 0px 4px)),
+    var(--linear-gradient, linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%));
+  align-items: center;
+  padding-bottom: 80px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  block-size: 100%;
+  min-block-size: 327px;
+  inline-size: clamp(375px, 260.56px + 30.52vw, 700px);
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 2px solid var(--color_outline, rgba(0, 0, 0, 1));
+}
+
+.header__title {
+  font-family: var(--font-family-header, "PressStart2P"), sans-serif;
+  font-weight: var(--header-text-weight);
+  line-height: 100%;
+  padding: 0 16px;
+  font-size: clamp(3.0625rem, 2.71rem + 1.50vw, 4.0625rem);
+}
+
+.header__about {
+  display: block;
+  text-transform: uppercase;
+  font-family: var(--font-family-header, "PressStart2P"), sans-serif;
+  font-weight: var(--header-text-weight);
+  line-height: 100%;
+  font-size: clamp(0.875rem, 0.68rem + 0.85vw, 1.4375rem);
+  padding-top: 21px;
+}
+
+.card {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  margin-top: 50px;
+  width: var(--mobile-width-card, clamp(375px, 256.56px + 30.52vw, 696px));
+  border: 2px solid var(--color_outline, rgba(0, 0, 0, 1));
+  background-color: var(--white-color, rgba(255, 255, 255));
+}
+
+.button__text {
+  position: relative;
+  color: rgb(255, 255, 255);
+  z-index: 1;
+  font-family: var(--font-family-btn, "PressStart2P"), sans-serif;
+  font-size: var(--font-size-btn, 14);
+  font-weight: var(--font-weight-btn, 400);
+  line-height: var(--line-height-btn, 90%);
+  mix-blend-mode: difference;
+}
+
+.card:first-child {
+  margin-top: 100px;
+}
+
+.text__decorated {
+  padding: 25.4px;
+  font-family: "Inter", "PressStart2P";
+  font-weight: var(--font-weight-about, 410);
+  font-size: var(--main-font-size, 18px);
+  line-height: var(--line-height-about, 21px);
+}
+
+.card__text-mylife {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.card__title {
+  padding: 4px 10px;
+  font-family: "Inter", "PressStart2P";
+  font-size: var(--main-font-size, 18px);
+  font-weight: var(--font-weight-title, 715);
+  line-height: var(--line-height-title, 100%);
+}
+
+.image-wrapper {
+  position: relative;
+  aspect-ratio: 1/1;
+  inline-size: clamp(371px, 256.56px + 30.52vw, 696px);
+  ;
+}
+
+
+.card__image {
+  aspect-ratio: 1/1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__like-button {
+  margin-right: 25px;
+  block-size: 38px;
+  inline-size: 130px;
+  background-color: transparent;
+  border: 2px solid var(--color_outline, rgba(0, 0, 0, 1));
+}
+
+.btn-save_memory {
+  margin: 50px 34.5px 34.5px 100px;
+}
+
+.label__text {
+  position: absolute;
+  top: 28px;
+  right: 25px;
+  font-family: var(--back_font, "PressStart2P");
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+}
+
+.filter-saturate {
+  filter: saturate(300%);
+}
+
+.filter-blur {
+  filter: blur(8px);
+}
+
+.filter-invert {
+  filter: invert(75%);
+}
+
+.filter-hue {
+  filter: hue-rotate(30deg);
+}
+
+.fiter-sepia {
+  filter: sepia(100%);
+}
+
+.filter-gray {
+  filter: grayscale(100%);
+}
+
+.fiter-multiply {
+  filter: blur(1px) sepia(40%) hue-rotate(270deg);
+}
+
+@supports (-webkit-text-stroke: 1px white) {
+  .label__text {
+    -webkit-text-stroke: 1px white;
+  }
+}
+
+.svg-floppy__dialog {
+  position: relative;
+  flex-shrink: 0;
+  width: 39px;
+  height: 39px;
+  z-index: 1;
+}
+
+.save-memory {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  margin: 50px 34.5px 34.5px 32px;
+  padding: 0;
+}
+
+.button-floppy {
+  color: white;
+  mix-blend-mode: difference;
+  margin: 17px 139px 0 139px;
+}
+
+.save-memory__text {
+  margin: 8px 20px 17px 20px;
+  font-family: var(--font-family-btn, "PressStart2P"), sans-serif;
+  font-size: var(--font-size-btn, 14);
+  font-weight: var(--font-weight-btn, 400);
+  line-height: var(--line-height-btn, 90%);
+}
+
+.save-memory__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.memory__dialog-text {
+  font-family: var(--back_font, "PressStart2P");
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+  margin-left: 13px;
+}
+
+.close-memory__dialog {
+  padding: 12.5px 0;
+  display: flex;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.close-memory__dialog .button__text {
+  text-transform: uppercase;
+}
+
+dialog[open] {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  inline-size: clamp(341px, 336.77px + 1.13vw, 353px);
+  font-family: var(--back_font, "PressStart2P");
+  border: 2px solid var(--accent-color, rgba(0, 0, 0));
+  padding: 30px;
+  gap: 30px;
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(5px);
+}
+
+
+.btn-animated__class {
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255);
+}
+
+.btn-animated__class:focus {
+  outline: none;
+}
+
+.btn-animated__class:focus-visible {
+  box-shadow: 2px 2px 0 var(--accent-color, rgba(0, 0, 0));
+}
+
+.btn-animated__class::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: var(--accent-color, rgba(0, 0, 0));
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.btn-animated__class:hover::before {
+  transform: translateX(0);
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.wrapper-button {
+  margin: 25px 0;
+  display: flex;
+  justify-content: end;
+  gap: 7px;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card__icon-button {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  padding: 0;
+  border: none;
+  flex-shrink: 0;
+  inline-size: 38px;
+  block-size: 38px;
+  background-color: transparent;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--color_outline, rgba(0, 0, 0, 1));
+}
+
+.contour {
+  transition: fill 0.1s linear;
+}
+
+.core {
+  transition: 0.3s linear 0.3s;
+}
+
+.main-body {
+  transition: 0.3s linear
+}
+
+.heart {
+  transform-origin: center;
+}
+
+.like-icon:hover .core {
+  transition: 0.3s linear 0.05s;
+  fill: var(--fill-color);
+}
+
+.like-icon:hover .main-body {
+  transition: 0.3s linear;
+  fill: var(--fill-color);
+}
+
+.like-icon:active .core {
+  transition: 0.3s linear 0.05s;
+  fill: var(--red-color);
+}
+
+.like-icon:active .main-body {
+  transition: 0.3s linear;
+  fill: var(--red-color);
+}
+
+.like-icon.is-liked .core {
+  transition: 0.3s linear 0.05s;
+  fill: var(--red-color);
+}
+
+.like-icon.is-liked .main-body {
+  transition: 0.5s linear 0.05s;
+  fill: var(--red-color);
+}
+
+.like-icon.is-liked .contour {
+  transition: 0.5s linear 0.05s;
+  fill: var(--red-color);
+}
+
+.like-icon.is-liked .heart {
+  animation: scales 0.3s ease-in 1 0.1s;
+}
+
+.like-icon.is-liked .sparks {
+  animation: opacity 0.3s ease-in 1 0.3s;
+}
+
+@media (width > 365px) {
+  .header {
+    min-block-size: clamp(327px, 312.56px + 3.85vw, 368px);
+  }
+
+  .save-memory {
+    flex-direction: row;
+    padding: 16px 20px;
+  }
+
+  .save-memory__text {
+    padding-left: 8px;
+    margin: 0;
+  }
+
+  .button-floppy {
+    padding: 0;
+    margin: 0;
+    inline-size: 21px;
+    height: 21px;
+  }
 }

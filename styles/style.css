@@ -241,7 +241,7 @@ dialog[open] {
 }
 
 dialog::backdrop {
-  background-color: var(--backdrop-background-color, rgba(0,0,0,0.6));
+  background-color: var(--backdrop-background-color, rgba(0,0,0,0.75));
 }
 
 
@@ -294,7 +294,8 @@ dialog::backdrop {
   border: none;
   flex-shrink: 0;
   inline-size: 38px;
-  block-size: 38px;
+  block-size: 35px;
+  margin-top: 1.5px;
 }
 
 .card__icon-button:focus {
@@ -322,27 +323,27 @@ dialog::backdrop {
 }
 
 .like-icon:hover .core {
-  transition: 0.3s linear 0.03s;
+  transition: 0.3s linear;
   fill: var(--fill-color);
 }
 
 .like-icon:hover .main-body {
-  transition: 0.3s linear;
+  transition: 0.3s linear 0.05s;
   fill: var(--fill-color);
 }
 
 .like-icon:active .core {
-  transition: 0.3s linear 0.05s;
-  fill: var(--red-color);
-}
-
-.like-icon:active .main-body {
   transition: 0.3s linear;
   fill: var(--red-color);
 }
 
-.like-icon.is-liked .core {
+.like-icon:active .main-body {
   transition: 0.3s linear 0.05s;
+  fill: var(--red-color);
+}
+
+.like-icon.is-liked .core {
+  transition: 0.3s linear;
   fill: var(--red-color);
 }
 
@@ -352,7 +353,7 @@ dialog::backdrop {
 }
 
 .like-icon.is-liked .contour {
-  transition: 0.5s linear 0.05s;
+  transition: 0.5s linear 0.06s;
   fill: var(--red-color);
 }
 
